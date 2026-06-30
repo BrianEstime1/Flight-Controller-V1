@@ -256,10 +256,10 @@ function Portfolio() {
               <div className="pcb-container">
                 <div className="pcb-svg-wrap">
                   <img
-                    src="https://github.com/user-attachments/assets/b86c0c75-746b-45fa-88ab-f8fcac19de80"
+                    src="canbus-node-3d.jpg"
                     alt="CANBUS-NODE v1 3D render — KiCad 3D Viewer"
                     width="100%"
-                    style={{ display: 'block', borderRadius: 4, filter: 'hue-rotate(120deg) saturate(0.9)' }}
+                    style={{ display: 'block', borderRadius: 4 }}
                   />
                 </div>
               </div>
