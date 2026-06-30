@@ -23,16 +23,6 @@ const ExternalIcon = () => (
   </svg>
 )
 
-/* ─── PCB Image — rendered from actual KiCad Gerber files ───────── */
-const FCVPCB = () => (
-  <img
-    src="fc-v1-board.svg"
-    alt="FC-V1 PCB — rendered from KiCad Gerber files (F.Cu, B.Cu, Silkscreen, Edge Cuts)"
-    width="100%"
-    style={{ maxWidth: 384, display: 'block', borderRadius: 6 }}
-  />
-)
-
 /* ─── Main App ───────────────────────────────────────────────────── */
 export default function App() {
   return (
@@ -227,6 +217,64 @@ function Portfolio() {
                 <span className="tag">Bare-metal C</span>
               </div>
               <Link to="/projects/fc-v1" className="read-more-link">
+                Read More →
+              </Link>
+            </div>
+
+            {/* CANBUS-NODE */}
+            <div className="project-card">
+              <div className="card-top">
+                <div className="card-icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="3"
+                      fill="none" stroke="#00D4FF" strokeWidth="1.5"/>
+                    <circle cx="8" cy="8" r="2" fill="#C8A000"/>
+                    <circle cx="24" cy="8" r="2" fill="#C8A000"/>
+                    <circle cx="8" cy="24" r="2" fill="#C8A000"/>
+                    <circle cx="24" cy="24" r="2" fill="#C8A000"/>
+                    <rect x="11" y="11" width="10" height="10" rx="1"
+                      fill="#141428" stroke="#00D4FF" strokeWidth="1"/>
+                    <line x1="2" y1="12" x2="8" y2="12" stroke="#00D4FF" strokeWidth="0.8"/>
+                    <line x1="2" y1="20" x2="8" y2="20" stroke="#00D4FF" strokeWidth="0.8"/>
+                    <line x1="24" y1="12" x2="30" y2="12" stroke="#00D4FF" strokeWidth="0.8"/>
+                    <line x1="24" y1="20" x2="30" y2="20" stroke="#00D4FF" strokeWidth="0.8"/>
+                    <line x1="13" y1="16" x2="19" y2="16" stroke="#C8A000" strokeWidth="1"/>
+                  </svg>
+                </div>
+                <span className="status-badge badge-ordered">◎ Ordered</span>
+              </div>
+
+              <h3 className="card-title">CANBUS-NODE v1 — STM32 CAN Bus Breakout</h3>
+              <p className="card-desc">
+                4-layer CAN bus node board built around the STM32F446RET6 (LQFP-64) and
+                TCAN332 transceiver. Features a 12V→5V LM2575 buck converter, 5V→3.3V
+                AP2112K LDO, USB-C port, 26MHz external crystal, SWD debug header,
+                UART/I²C breakout connectors, screw-terminal CAN bus output, and
+                dedicated test points throughout. Designed in KiCad 10.
+              </p>
+
+              <div className="pcb-container">
+                <div className="pcb-svg-wrap">
+                  <img
+                    src="https://github.com/user-attachments/assets/b86c0c75-746b-45fa-88ab-f8fcac19de80"
+                    alt="CANBUS-NODE v1 3D render — KiCad 3D Viewer"
+                    width="100%"
+                    style={{ display: 'block', borderRadius: 4, filter: 'hue-rotate(120deg) saturate(0.9)' }}
+                  />
+                </div>
+              </div>
+
+              <div className="tags">
+                <span className="tag">KiCad 10.0</span>
+                <span className="tag">STM32F446RET6</span>
+                <span className="tag">4-Layer PCB</span>
+                <span className="tag">TCAN332</span>
+                <span className="tag">CAN Bus</span>
+                <span className="tag">Buck Converter</span>
+                <span className="tag">USB-C</span>
+                <span className="tag">SWD</span>
+              </div>
+              <Link to="/projects/canbus-node" className="read-more-link">
                 Read More →
               </Link>
             </div>
@@ -426,7 +474,7 @@ function Portfolio() {
               <div className="skill-group-label">Hardware</div>
               <div className="skill-items">
                 {['KiCad', 'Altium Designer', 'PCB Layout & Routing', 'Schematic Capture',
-                  'Oscilloscope / DMM', 'Power Electronics', '2-Layer PCB Design',
+                  'Oscilloscope / DMM', 'Power Electronics', '4-Layer PCB Design',
                   'Component Selection'].map(s => (
                   <div key={s} className="skill-item">{s}</div>
                 ))}
@@ -506,7 +554,7 @@ function Portfolio() {
 
             <div className="about-stats">
               <div className="about-stat">
-                <span className="stat-num">2</span>
+                <span className="stat-num">3</span>
                 <div className="stat-label">PCBs Designed &amp; Ordered</div>
               </div>
               <div className="about-stat">
@@ -514,8 +562,8 @@ function Portfolio() {
                 <div className="stat-label">Daily Active Users on FERDAIR</div>
               </div>
               <div className="about-stat">
-                <span className="stat-num">F411</span>
-                <div className="stat-label">STM32 — Current MCU</div>
+                <span className="stat-num">F446</span>
+                <div className="stat-label">STM32 — Latest MCU</div>
               </div>
               <div className="about-stat">
                 <span className="stat-num">UCF</span>

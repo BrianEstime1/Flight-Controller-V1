@@ -31,6 +31,28 @@ const PROJECTS = {
       },
     ],
   },
+  'canbus-node': {
+    title: 'CANBUS-NODE v1 — STM32 CAN Bus Breakout',
+    status: 'Ordered',
+    statusClass: 'badge-ordered',
+    statusIcon: '◎',
+    eta: 'board arrives soon',
+    tags: ['KiCad 10.0', 'STM32F446RET6', '4-Layer PCB', 'TCAN332', 'CAN Bus', 'Buck Converter', 'USB-C', 'SWD'],
+    note: null,
+    thumbnail: null,
+    thumbnailAlt: null,
+    images: [],
+    specs: [
+      { label: 'MCU', value: 'STM32F446RET6 — LQFP-64, 180 MHz Cortex-M4F' },
+      { label: 'CAN Transceiver', value: 'TCAN332 — ISO 11898-2, 1 Mbps, TSOT-23-8' },
+      { label: 'Power Input', value: '12V → LM2575 Buck → 5V → AP2112K LDO → 3.3V' },
+      { label: 'Layers', value: '4 (F.Cu · In1.Cu · In2.Cu · B.Cu), 87mm × 55.5mm' },
+      { label: 'Crystal', value: '26 MHz external (ABM8G 4-pin SMD)' },
+      { label: 'Connectivity', value: 'USB-C · SWD · UART · I²C · CAN screw terminal' },
+      { label: 'Indicators', value: 'PWR, 3.3V, 5V, Flash LEDs + test points throughout' },
+      { label: 'Tool', value: 'KiCad 10.0 — full schematic + layout + Gerber export' },
+    ],
+  },
   'buck-converter': {
     title: 'Synchronous Buck Converter PCB',
     status: 'Ordered',
@@ -128,6 +150,28 @@ export default function ProjectPage() {
               <p style={{ padding: '10px 16px', fontSize: 11, color: 'var(--text-muted)', borderTop: '1px solid var(--border)', margin: 0, background: 'var(--bg-card)' }}>
                 KiCad 3D Viewer — pre-fabrication render
               </p>
+            </div>
+          )}
+
+          {/* Spec table for canbus-node */}
+          {project.specs && (
+            <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: 8, padding: '28px 32px', marginBottom: 40 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+                <div style={{ width: 2, height: 20, background: 'var(--cyan)', borderRadius: 1, flexShrink: 0 }} />
+                <p style={{ fontSize: 11, color: 'var(--cyan)', letterSpacing: '0.12em', textTransform: 'uppercase', margin: 0 }}>
+                  Board Specifications
+                </p>
+              </div>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <tbody>
+                  {project.specs.map(({ label, value }) => (
+                    <tr key={label} style={{ borderBottom: '1px solid var(--border)' }}>
+                      <td style={{ padding: '10px 0', fontSize: 12, color: 'var(--cyan)', fontFamily: 'var(--font)', width: '30%', paddingRight: 16 }}>{label}</td>
+                      <td style={{ padding: '10px 0', fontSize: 13, color: 'var(--text-dim)', lineHeight: 1.5 }}>{value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
 
