@@ -39,8 +39,8 @@ const PROJECTS = {
     eta: 'board arrives soon',
     tags: ['KiCad 10.0', 'STM32F446RET6', '4-Layer PCB', 'TCAN332', 'CAN Bus', 'Buck Converter', 'USB-C', 'SWD'],
     note: null,
-    thumbnail: null,
-    thumbnailAlt: null,
+    thumbnail: '/canbus-node-3d.jpg',
+    thumbnailAlt: 'CANBUS-NODE v1 KiCad 3D render',
     images: [],
     specs: [
       { label: 'MCU', value: 'STM32F446RET6 — LQFP-64, 180 MHz Cortex-M4F' },
